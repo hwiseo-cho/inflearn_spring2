@@ -1,5 +1,6 @@
 package hello.core.order;
 
+import hello.core.annotation.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.Member;
@@ -19,6 +20,7 @@ public class OrderServiceImpl implements OrderService {
     // 순수 자바 테스트 불가능
     private final MemberRepository memberRepository;
     //@Qualifier("mainDiscountPolicy")
+    @MainDiscountPolicy
     private final DiscountPolicy discountPolicy;
 
     // 이렇게 수정자에 @Autowired를 넣으면 주입이됨
